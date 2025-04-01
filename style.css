@@ -2,73 +2,98 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: honeydew;
+    text-align: center;
+    
 }
 
-nav ul {
+nav {
+    background:green (255, 255, 255);
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    margin: 0 15px;
+    font-size: 18px;
+    transition: color 0.3s ease-in-out, text-decoration 0.3s;
+}
+
+/* Hover effect for navigation links */
+nav a:hover {
+    color: blue;
+    text-decoration: underline;
+}
+
+.hero {
+    background: url('') center/cover no-repeat;
+    padding: 100px 20px;
+    color: black;
+}
+
+.features {
     display: flex;
     justify-content: center;
-    list-style: none;
-    background: #333;
-    padding: 10px;
+    gap: 20px;
+    padding: 50px;
 }
 
-nav ul li {
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-}
-
-header {
-    text-align: center;
+.feature-card {
+    background: honey yellow;
     padding: 20px;
-    background: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-.container {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-}
-
-.container section, .container aside {
-    width: 48%;
-}
-
-/* Services Page */
-.grid {
+.services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 10px;
-    padding: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 50px;
 }
 
-.card {
-    background: #ddd;
-    padding: 20px;
+.service-card {
+    background: honeydew;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     text-align: center;
-    border-radius: 5px;
-    transition: transform 0.3s;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-.card:hover {
+/* Hover effect for service cards */
+.service-card:hover {
     transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-/* Contact Form */
-form {
+.service-card img {
+    width: 100%;
+    height: 150px;
+    border-radius: 5px;
+}
+
+.contact-form form {
     display: flex;
     flex-direction: column;
-    width: 50%;
+    gap: 15px;
+    max-width: 400px;
     margin: auto;
 }
 
 input, textarea {
-    margin: 10px 0;
-    padding: 10px;
     width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: border 0.3s ease-in-out;
+}
+
+/* Hover effect for form fields */
+input:hover, textarea:hover {
+    border-color: blue;
 }
 
 button {
@@ -77,27 +102,16 @@ button {
     padding: 10px;
     border: none;
     cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;
 }
 
 button:hover {
     background: darkblue;
 }
 
-/* Media Queries */
-@media (max-width: 1024px) {
-    .container {
-        flex-direction: column;
-    }
-}
-
 @media (max-width: 768px) {
-    .grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 480px) {
-    form {
-        width: 90%;
+    .features, .services-grid {
+        flex-direction: column;
     }
 }
